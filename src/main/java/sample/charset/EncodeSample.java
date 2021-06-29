@@ -5,10 +5,10 @@ import java.nio.charset.Charset;
 import java.util.stream.Stream;
 
 /**
- * Hello world!
- *
+ * 引数で与えられた文字列と文字コードでbyte配列にエンコードする
+ * 出力は１バイトずつ16進数出力して、改行で区切る。
  */
-public class App {
+public class EncodeSample {
 
     public static void main( String[] args ) throws UnsupportedEncodingException {
         printToBytes(args[0], args[1]);
