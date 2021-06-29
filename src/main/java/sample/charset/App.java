@@ -1,6 +1,7 @@
 package sample.charset;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.util.stream.Stream;
 
 /**
@@ -9,20 +10,17 @@ import java.util.stream.Stream;
  */
 public class App {
 
-    public static final String SHIFT_JIS = "Shift_JIS";
-    public static final String CP943C = "Cp943C";
-
     public static void main( String[] args ) throws UnsupportedEncodingException {
-        String str = "－";
-        printToBytes(str, SHIFT_JIS);
-        printToBytes(str, CP943C);
+        printToBytes(args[0], args[1]);
     }
 
     public static void printToBytes(String str, String charset) throws UnsupportedEncodingException {
         System.out.println("Origin str : " + str);
         System.out.println("Charset : " + charset);
+        System.out.println("canEncode : " + Charset.forName(charset).canEncode());
         for(byte b : str.getBytes(charset)){
             System.out.println(String.format("%02x",b));
         }
+        System.out.println();
     }
 }
