@@ -13,6 +13,7 @@ mvn clean compile exec:java -Dexec.mainClass="sample.charset.EncodeSample" -Dexe
 mvn clean compile
 mvn exec:java -Dexec.mainClass="sample.charset.EncodeSample" -Dexec.args="'－' 'Shift_JIS'"
 mvn exec:java -Dexec.mainClass="sample.charset.EncodeSample" -Dexec.args="'－' 'Cp943C'"
+mvn exec:java -Dexec.mainClass="sample.charset.EncodeSample" -Dexec.args="'－' 'MS932'"
 mvn exec:java -Dexec.mainClass="sample.charset.EncodeSample" -Dexec.args="'－' 'UTF-16BE'"
 ```
 
@@ -29,5 +30,10 @@ mvn clean compile
 mvn exec:java -Dexec.mainClass="sample.charset.DecodeSample" -Dexec.args="'3f' 'Shift_JIS'"
 mvn exec:java -Dexec.mainClass="sample.charset.DecodeSample" -Dexec.args="'817c' 'Cp943C'"
 mvn exec:java -Dexec.mainClass="sample.charset.DecodeSample" -Dexec.args="'ff0d' 'UTF-16BE'"
+mvn exec:java -Dexec.mainClass="sample.charset.DecodeSample" -Dexec.args="'817c' 'Shift_JIS'"
 
 ```
+
+## 参考
+
+- [文字コードに含まれない文字を String#getBytes() すると強制的に「3F（半角はてな[?]）」に置き換わる:不会忘記的一天](https://guangda.hatenablog.com/entry/20091215/1260860035)
